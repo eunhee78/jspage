@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {display: flex; flex-direction: column; gap: 24px;}
+        div {margin: 8px 0; padding: 8px;border: 1px solid #ccc;border-radius: 4px;}
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Click Event</h3>
+        <button id="myButton">Click Me</button>
+    </div>
+    <div>
+        <h3>Mouse Event</h3>
+        <div id="myDiv" style="width: 200px; height: 40px; background-color: lightblue;">Mouse over me</div>
+    </div>
+    <div>
+        <h3>Keyboard Event</h3>
+        <input type="text" id="myInput" placeholder="Press Enter">
+    </div>
+
+    <script>
+        document.getElementById("myButton").addEventListener("click", function() {
+            console.log("click");
+        })
+        document.getElementById("myDiv").addEventListener("mouseover", function() {
+            this.style.backgroundColor = "black"; // 마우스를 가져다대면 검정색으로 바뀜
+            this.style.color = "white"; // 마우스를 가져다대면 글자색이 흰색으로 바뀜
+            console.log("mouseover");
+        })
+        document.getElementById("myInput").addEventListener("keydown", function(e) {
+            if(e.key == "Enter") {
+                console.log("Enter");
+            }
+        })
+    </script>
+</body>
+</html>
+
+document.getElementById("myInput").addEventListener("keydown", function(e) {
+    if(e.key == "Enter") {
+        console.log("Enter");
+    }
+})
